@@ -2,14 +2,19 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+/**
+ * 
+ * @author Simon
+ *
+ */
 public class JDBCConnector {
 
 	private static String username = "";
 	private static String password = "";
-	private static String dbConnection = "";
+	private static String conn = "";
 
 	public static Connection connect() throws SQLException {
-		return DriverManager.getConnection(dbConnection, username, password);
+		return DriverManager.getConnection(conn, username, password);
 	}
 	
 	public static String getUsername() {
@@ -28,12 +33,12 @@ public class JDBCConnector {
 		JDBCConnector.password = password;
 	}
 
-	public static String getDbConnection() {
-		return dbConnection;
+	public static String getConnectionAddress() {
+		return conn;
 	}
 
-	public static void setDbConnection(String dbConnection) {
-		JDBCConnector.dbConnection = dbConnection;
+	public static void setConnectionAddress(String conn) {
+		JDBCConnector.conn = conn;
 	}
 
 }
